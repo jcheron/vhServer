@@ -11,7 +11,7 @@ JSON format is used for sending commands to the server :
 
 this message open test.txt with notepad.exe on the server
 ```json
-{"action":"run","content":"c:\windows\system32\notepad.exe","params":["test.txt"]}
+{"action":"run","content":"c:\\windows\\system32\\notepad.exe","params":["test.txt"]}
 ```
 The server returns the JSON response :
 ```json
