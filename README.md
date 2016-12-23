@@ -26,7 +26,7 @@ java -jar vhServer.jar
 ```
 This runs **vhServer** on  the 9001 TCP port
 
-To change the port at startup
+For changing the port at startup
 ``` bash
 java -jar vhServer.jar 9005
 ```
