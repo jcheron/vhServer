@@ -9,7 +9,7 @@ It communicates with the client via TCP in JSON format :
 ### Server protocol
 JSON format is used for sending commands to the server :
 
-this message open test.txt with notepad.exe on the server
+this message opens test.txt with notepad.exe on the server
 ```json
 {"action":"run","content":"c:\\windows\\system32\\notepad.exe","params":["test.txt"]}
 ```
