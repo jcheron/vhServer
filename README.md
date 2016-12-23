@@ -1,5 +1,5 @@
 # vhServer
-A java server for virtualhost app
+A java server for the virtualhosts app
 
 ## What's vhServer
 This program can run scripts, receive a file and save it, receive a ping and reply to it, and everything you can add...
