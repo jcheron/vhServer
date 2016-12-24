@@ -31,11 +31,15 @@ public class Server {
 				System.exit(1);
 			}
 		}
-		startServer(port);
+		try {
+			startServer(port);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	private static void startServer(int port) throws UnknownHostException, IOException, InterruptedException {
-		Server s = new Server(port, "localhost");
+		Server s = new Server(port, "0.0.0.0");
 		s.start();
 	}
 
@@ -51,7 +55,12 @@ public class Server {
 			System.out.println("Waiting for a  connection...");
 			final Socket activeSocket = serverSocket.accept();
 			System.out.println("Received a  connection from  " + activeSocket);
-			Runnable runnable = () -> handleClientRequest(activeSocket);
+			Runnable runnable = new Runnable() {
+				@Override
+				public void run() {
+					handleClientRequest(activeSocket);
+				}
+			};
 			Thread t = new Thread(runnable);
 			t.start();
 			t.join();
